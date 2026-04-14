@@ -1,13 +1,23 @@
-import { createserver } from 'node:http'
+import { createServer } from 'node:http'
 
-const server = createserver((req, res) => {
+
+
+
+const server = createServer((req, res) => {
+
+    // console.log(req);
+    console.log(req.method);
+    console.log(req.url);
+
+
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, world!\n');
+    res.end('Welcome to my server!\n');
 
 })
 
-server.listen(300, 'localhost', () => {
-    console.log('server is running at http://localhost:300/');
+
+server.listen(3000, 'localhost', () => {
+    console.log('My server is running at http://localhost:3000/');
 
 })
