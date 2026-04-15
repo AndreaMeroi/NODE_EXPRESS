@@ -13,9 +13,42 @@ app.listen(port, () => {
 
 //routes 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('<h1>Hello World!</h1>')
+})
+
+app.get('/person', (req, res) => {
+
+    res.json({
+        name: "Andrea"
+    })
+})
+
+
+app.get('/people', (req, res) => {
+    //concateno metodi .type e .json
+    res.type('json').send({
+        number: 10,
+        country: "Italy"
+    })
 })
 
 app.get('/films', (req, res) => {
-    res.send('Show a list of movies')
+
+    res.json([
+        {
+            title: 'Inception',
+            director: "Christopher Nolan",
+            year: 2010
+        },
+        {
+            title: 'Inception',
+            director: "Christopher Nolan",
+            year: 2010
+        },
+        {
+            title: 'Inception',
+            director: "Christopher Nolan",
+            year: 2010
+        }
+    ])
 })
