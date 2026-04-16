@@ -66,6 +66,23 @@ app.get('/menu/:name', (req, res) => {
 
 })
 
+// index
+app.get('/pizzas/', (req, res) => {
+
+})
+
+// show
+
+// store 
+
+// update
+
+// modify 
+
+// destroy 
+
+
+
 /*examples of dynamic routes segments
 'menu/margherita'
 'menu/diavola'
@@ -79,3 +96,4 @@ app.get('/menu/:name', (req, res) => {
 'posts/4'
 'posts/5'
 */
+
