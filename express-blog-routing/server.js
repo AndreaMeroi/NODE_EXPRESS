@@ -51,7 +51,7 @@ app.get('/routers/posts', (req, res) => {
 app.get('/routers/posts/:name', (req, res) => {
     //res.send('mostra il sigolo post')
 
-    const { name } = req.params
+    const { name } = req.params // le graffe servono per destrutturare l'oggetto req.params, salvando nella variabile ciò che corrisponde alla chiave name
     console.log(name);
 
     const singlePost = post.find(item => item.name === name)
