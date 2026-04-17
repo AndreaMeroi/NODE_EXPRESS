@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
-const menu = [
+const post = [
     {
         id: 1,
         name: 'margherita',
@@ -42,44 +42,44 @@ app.listen(PORT, () => {
 // CRUD Routes
 
 //index
-app.get('/api/menus', (req, res) => {
+app.get('/routers/posts', (req, res) => {
     //res.send('Lista dei post')
-    res.json(menu)
+    res.json(post)
 })
 
 //show
-app.get('/api/menus/:name', (req, res) => {
+app.get('/routers/posts/:name', (req, res) => {
     //res.send('mostra il sigolo post')
 
     const { name } = req.params
     console.log(name);
 
-    const post = menu.find(item => item.name === name)
+    const singlePost = post.find(item => item.name === name)
 
     //    console.log(item.name);
-    if (!post) {
+    if (!singlePost) {
         res.status(404).json({
             error: true,
             message: 'Not Found'
         })
     }
-    res.json(post)
+    res.json(singlePost)
 })
 
 //store
-app.post('/api/menus/', (req, res) => {
+app.post('/routers/posts/', (req, res) => {
     res.send('crea un nuovo post')
 })
 //update
-app.put('/api/menus/:id', (req, res) => {
+app.put('/routers/posts/:id', (req, res) => {
     res.send('modifica lintero post con id:' + req.params.id)
 })
 //modify 
-app.patch('/api/menus/:id', (req, res) => {
+app.patch('/routers/posts/:id', (req, res) => {
     res.send('modifica parzialmente il post con id:' + req.params.id)
 })
 
 //destroy
-app.delete('/api/menus/:id', (req, res) => {
+app.delete('/routers/posts/:id', (req, res) => {
     res.send('elimina il post con id:' + req.params.id)
 })
