@@ -64,7 +64,7 @@ const destroy = (req, res) => {
     console.log(pizza);
 
     if (!pizza) {
-        res.status(404).json({
+        return res.status(404).json({
             error: true,
             message: 'Not Found'
         })
