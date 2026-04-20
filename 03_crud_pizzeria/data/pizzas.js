@@ -1,11 +1,4 @@
-// import express
-const express = require('express')
-// create the router instance
-const router = express.Router()
-
-//copio da questa parte la variabile contenente il menu 
-/* Per maggior ordine sposto menu in una cartella dedicata  DATA 
-const menu = [
+menu = [
     {
         id: 1,
         name: 'margherita',
@@ -36,32 +29,6 @@ const menu = [
         img: './public/fe7a9320-abaf-4e08-9080-202bd1f959b5.jpg',
         ingredients: ['pomodoro', 'mozzarella', 'gorgonzola', 'parmigiano', 'ricotta']
     }
-] */
-//poi importo menu dalla cartella data/
-//const menu = require('../data/pizzas')
-// import pizza_controller
-const pizzaController = require('../controllers/pizzacontrollers')
+]
 
-// CRUD OPERATIONS ON ENTITY PIZZA
-
-// index (Read)
-router.get('/', pizzaController.index)
-
-// show (Read) 
-router.get('/:id', pizzaController.show)
-
-// store (Create)
-router.post('/', pizzaController.store)
-
-// update (Update)
-router.put('/:id', pizzaController.update)
-
-// modify (Update)
-router.patch('/:id', pizzaController.modify)
-
-// destroy (delete)
-router.delete('/:id', pizzaController.destroy)
-
-// export router 
-module.exports = router
-
+module.exports = menu
