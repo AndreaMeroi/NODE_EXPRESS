@@ -44,9 +44,6 @@ const store = (req, res) => {
     console.log(books);
 }
 
-
-
-
 const update = (req, res) => {
     //recupero il parametro dinamico dall'oggetto req
     const id = parseInt(req.params.id)
@@ -63,9 +60,9 @@ const update = (req, res) => {
     //read from the body request from values form the given obj
     console.log(req.body);
 
-    //update the file 
+    //creo una costante per ogni chiave dell'oggetto)  
     const { title, author, year, genre, description, price } = req.body
-    //return the update obj
+    //aggiorno delle chiavi dell'oggetto con i nuovi valori 
     book.title = title;
     book.year = year;
     book.description = description;
@@ -73,6 +70,7 @@ const update = (req, res) => {
     book.price = price;
     book.genre = genre;
 
+    //return the updated obj
     res.json(book)
 }
 

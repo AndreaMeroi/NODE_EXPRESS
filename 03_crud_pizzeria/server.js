@@ -7,6 +7,7 @@ const drinkRouter = require('./routes/drinks')
 
 app.use(express.static('public'))
 
+
 app.listen(PORT, () => {
     console.log(`Pizzeria API server started on http://localhost:${PORT}`)
 })

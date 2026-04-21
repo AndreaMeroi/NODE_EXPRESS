@@ -33,45 +33,11 @@ const show = (req, res) => {
 }
 
 const store = (req, res) => {
-    console.log(req.body);
-    const newId = posts[posts.length - 1].id + 1
-    const { name, img, tags } = req.body
-    const newPost = {
-        id: newId,
-        name,
-        img,
-        tags
-    }
-
-    posts.push(newPost)
-
-    res.status(201).json(posts)
+    res.send('crea un nuovo post')
 }
 
 const update = (req, res) => {
-    //recupero il parametro dinamico dall'oggetto req
-    const id = parseInt(req.params.id)
-    //creo la const che contiene il libro corrispondente all'id 
-    const post = posts.find(post => post.id === id)
-    //SE NON trovo il libro corrispondente all'id mostro messagio d'errore
-    if (!post) {
-        return res.status(404).json({
-            error: true,
-            message: 'post not found'
-        })
-    }
-    console.log(req.body);
-    //update the file 
-    const { name, img, tags } = req.body
-    //return the update obj
-    post.name = name;
-    post.img = img;
-    post.tags = tags
-
-    res.json(post)
-
-    console.log(posts);
-
+    res.send('modifica lintero post con id:' + req.params.id)
 }
 
 const modify = (req, res) => {
