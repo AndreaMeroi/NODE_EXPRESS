@@ -7,7 +7,7 @@ const booksRouter = require('./router/books')
 
 //set assets MIDDLEWARE
 app.use(express.static('public'))
-app.use(express.json()) //bodyparser 
+app.use(express.json()) //bodyparser per far sì che la nostra app riesca a decifrare il request body
 app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);
 })
